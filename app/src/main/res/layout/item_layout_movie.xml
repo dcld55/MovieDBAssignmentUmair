@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="id.indocyber.common.entity.movie.Result" />
+
+        <import type="id.indocyber.common.Constant" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="5dp"
+            android:id="@+id/card"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/poster_image"
+                    android:layout_width="85dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="poster"
+                    custom:roundedCornerImage="@{Constant.IMAGE_PREFIX+data.poster_path}" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_toEndOf="@id/poster_image"
+                    android:text="@{data.title}"
+                    android:fontFamily="@font/mulish_bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/rating_star"
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@id/poster_image"
+                    android:src="@drawable/ic_baseline_star_24" />
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title"
+                    android:fontFamily="@font/mulish_regular"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/rating_star"
+                    android:text="@{String.format(`Rating : %.2f/10 IMDb`, data.vote_average)}"
+                    android:textColor="#9C9C9C"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipgroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rating"
+                    app:chipSpacing="0dp"
+                    app:chipSpacingVertical="-20dp"
+                    app:chipSpacingHorizontal="8dp"
+                    android:layout_toEndOf="@id/poster_image"
+                    android:layout_marginBottom="-5dp"
+                    android:layout_marginTop="-5dp"/>
+
+                <ImageView
+                    android:id="@+id/imput_image"
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/chipgroup"
+                    android:layout_marginTop="2dp"
+                    android:layout_toEndOf="@id/poster_image"
+                    android:src="@drawable/ic_baseline_input_24" />
+
+                <TextView
+                    android:id="@+id/release_date"
+                    android:layout_width="200dp"
+                    android:fontFamily="@font/mulish_regular"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/chipgroup"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toEndOf="@+id/imput_image"
+                    android:text="@{data.release_date}"
+                    android:layout_marginBottom="7dp"
+
+                    android:textColor="@color/black" />
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

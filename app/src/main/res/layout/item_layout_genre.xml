@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="isSelected"
+            type="Boolean" />
+        <variable
+            name="data"
+            type="id.indocyber.common.entity.genre.Genre" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            app:cardBackgroundColor="@color/white"
+            android:id="@+id/card"
+            app:strokeColor="@{isSelected?@color/genre_selection_color:@color/genre_idle_color}"
+            app:strokeWidth="2dp"
+            android:layout_height="75dp"
+            android:padding="5dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="1dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:fontFamily="@font/mulish_bold"
+                android:textColor="@{isSelected?@color/genre_selection_color:@color/genre_idle_color}"
+                android:text="@{data.name}" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

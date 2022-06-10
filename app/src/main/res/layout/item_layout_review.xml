@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="id.indocyber.common.entity.review.Result" />
+
+        <import type="id.indocyber.common.Constant" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/tools"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        android:layout_marginTop="10dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_avatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                custom:loadImageCircled="@{data.author_details.avatar_path.startsWith(`/http`) ? data.author_details.avatar_path.substring(1) : Constant.IMAGE_PREFIX+data.author_details.avatar_path}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_username"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:text="@{data.author_details.name}"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:fontFamily="@font/mulish_bold"
+                android:layout_toEndOf="@id/img_avatar" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/postedIn"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/mulish_regular"
+                android:textSize="12sp"
+                android:text="@{data.created_at}"
+                android:layout_toEndOf="@id/tv_username"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/mulish_regular"
+                android:textSize="14sp"
+                android:text="@{data.content}"
+                android:layout_below="@id/tv_username"
+                android:layout_toEndOf="@id/img_avatar"/>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/genreFragment">
+
+    <fragment
+        android:id="@+id/genreFragment"
+        android:name="id.indocyber.themoviedbumair.fragment.genre.GenreFragment"
+        android:label="GenreFragment" >
+        <action
+            android:id="@+id/action_genreFragment_to_movieFragment"
+            app:destination="@id/movieFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="id.indocyber.themoviedbumair.fragment.movie.MovieFragment"
+        android:label="MovieFragment" >
+        <argument android:name="genrelist" app:argType="string"/>
+        <argument android:name="genrename" app:argType="id.indocyber.common.entity.genre.Genre[]"/>
+        <action
+            android:id="@+id/toDetail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="id.indocyber.themoviedbumair.fragment.detail.DetailFragment"
+        android:label="DetailFragment">
+        <argument android:name="movieId" app:argType="integer"/>
+    </fragment>
+</navigation>
