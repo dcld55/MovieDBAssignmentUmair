@@ -31,11 +31,6 @@ class GenreFragment : BaseFragment<GenreViewModel, LayoutGenreFragmentBinding>()
                 binding.retryButton.visibility = View.GONE
                 adapter.differ.submitList(it)
                 vm.listGenre.addAll(it)
-                if (vm.selectionTrack != null) {
-                    binding.fabToMovie.visibility = View.VISIBLE
-                } else {
-                    binding.fabToMovie.visibility = View.GONE
-                }
             }, error = {
                 binding.retryButton.visibility = View.VISIBLE
                 binding.loadingContainer.visibility = View.GONE
