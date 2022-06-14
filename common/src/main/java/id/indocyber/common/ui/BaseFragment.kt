@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -24,7 +23,7 @@ abstract class BaseFragment<VM : BaseViewModel, Binding : ViewDataBinding> : Fra
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<Binding>(inflater, layoutResourceId, container, false)
+        binding = DataBindingUtil.inflate(inflater, layoutResourceId, container, false)
         binding.setVariable(BR.vm, vm)
         binding.lifecycleOwner = this
         initBinding(binding)
@@ -59,7 +58,7 @@ abstract class BaseFragment<VM : BaseViewModel, Binding : ViewDataBinding> : Fra
         data.observe(this){response->
             when(response){
                 is AppResponse.AppResponseSuccess -> {
-                    success?.invoke(response.data)
+                    success.invoke(response.data)
                 }
                 is AppResponse.AppResponseError -> {
                     response.e?.let {

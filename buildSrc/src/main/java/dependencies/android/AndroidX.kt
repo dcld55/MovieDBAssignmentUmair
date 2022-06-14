@@ -13,4 +13,5 @@ fun DependencyHandler.androidX() {
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation ("androidx.recyclerview:recyclerview-selection:1.1.0")
     implementation ("com.github.valkriaine:Bouncy:2.3")
+    implementation ("com.android.support:design:28.0.0")
 }

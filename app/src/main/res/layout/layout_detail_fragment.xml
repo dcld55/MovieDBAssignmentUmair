@@ -51,7 +51,7 @@
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            custom:loadImage="@{data.backdrop_path != null ? Constant.IMAGE_PREFIX+data.backdrop_path : Constant.IMAGE_PREFIX+data.poster_path}"/>
+            custom:loadImage="@{data.backdrop_path != null ? Constant.IMAGE_PREFIX+data.backdrop_path : Constant.IMAGE_PREFIX+data.poster_path}" />
 
 
         <androidx.cardview.widget.CardView
@@ -92,6 +92,7 @@
                         android:textSize="20sp"
                         android:textStyle="bold"
                         tools:text="Doctor Strange in The Multiverse Of Madness" />
+
 
                     <ImageView
                         android:id="@+id/rating_star"
