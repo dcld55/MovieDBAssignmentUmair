@@ -25,8 +25,8 @@ class MovieDataSource(
 
                     LoadResult.Page(
                         data = it.results,
-                        prevKey = if (it.results.isEmpty()) null else it.page - 1,
-                        nextKey = it.page + 1
+                        prevKey = if (it.page == 1) null else it.page - 1,
+                        nextKey = if (it.results.isEmpty()) null else it.page + 1
                     )
                 } ?: LoadResult.Error(Exception("Error Backend: ${result.code()}"))
 

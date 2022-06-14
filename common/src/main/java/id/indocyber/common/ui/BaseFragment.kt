@@ -40,7 +40,7 @@ abstract class BaseFragment<VM : BaseViewModel, Binding : ViewDataBinding> : Fra
                 vm.parent = it.vm
             }
         }
-        vm.navigationtEvent.observe(this) {
+        vm.navigationEvent.observe(this) {
             findNavController().navigate(it)
         }
 
