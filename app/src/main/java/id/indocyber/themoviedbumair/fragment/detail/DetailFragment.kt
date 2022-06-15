@@ -1,13 +1,8 @@
 package id.indocyber.themoviedbumair.fragment.detail
 
-import android.os.Bundle
 import android.view.View
 import androidx.core.view.marginTop
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.navArgs
 import androidx.paging.LoadState
 import com.google.android.material.chip.Chip

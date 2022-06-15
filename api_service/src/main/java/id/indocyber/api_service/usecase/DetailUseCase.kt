@@ -5,7 +5,7 @@ import id.indocyber.common.entity.detail_movie.MovieDetailResponse
 import id.indocyber.common.ui.AppResponse
 import kotlinx.coroutines.flow.flow
 
-class DetailUsecase(
+class DetailUseCase(
     private val detailService: DetailService
 ) {
     operator fun invoke(movieId: Int) = flow<AppResponse<MovieDetailResponse>> {

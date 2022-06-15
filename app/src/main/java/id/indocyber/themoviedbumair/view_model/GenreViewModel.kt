@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.selection.SelectionTracker
 import dagger.hilt.android.lifecycle.HiltViewModel
-import id.indocyber.api_service.usecase.GenreUsecase
+import id.indocyber.api_service.usecase.GenreUseCase
 import id.indocyber.common.entity.genre.Genre
 import id.indocyber.common.ui.AppResponse
 import id.indocyber.common.ui.BaseViewModel
@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class GenreViewModel @Inject constructor(
     application: Application,
-    private val genreUsecase: GenreUsecase
+    private val genreUsecase: GenreUseCase
 ) :
     BaseViewModel(application) {
 

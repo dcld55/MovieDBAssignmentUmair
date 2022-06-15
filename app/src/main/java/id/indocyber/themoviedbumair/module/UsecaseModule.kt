@@ -11,19 +11,19 @@ import id.indocyber.api_service.usecase.*
 @InstallIn(ViewModelComponent::class)
 class UsecaseModule {
     @Provides
-    fun provideGenreUsecase(genreService: GenreService) = GenreUsecase(genreService)
+    fun provideGenreUsecase(genreService: GenreService) = GenreUseCase(genreService)
 
     @Provides
     fun provideMovieUsecase(movieService: MovieService) = MovieUseCase(movieService)
 
     @Provides
-    fun provideDetailUsecase(detailService: DetailService) = DetailUsecase(detailService)
+    fun provideDetailUsecase(detailService: DetailService) = DetailUseCase(detailService)
 
     @Provides
-    fun provideVideoUsecase(videoService: VideoService) = VideoUsecase(videoService)
+    fun provideVideoUsecase(videoService: VideoService) = VideoUseCase(videoService)
 
     @Provides
-    fun provideReviewUsecase(reviewService: ReviewService) = ReviewUsecase(reviewService)
+    fun provideReviewUsecase(reviewService: ReviewService) = ReviewUseCase(reviewService)
 
 
 }

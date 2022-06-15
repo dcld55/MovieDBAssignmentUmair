@@ -1,4 +1,4 @@
-package com.example.common.ext
+package id.indocyber.common.ext
 
 import androidx.annotation.MainThread
 import androidx.annotation.Nullable

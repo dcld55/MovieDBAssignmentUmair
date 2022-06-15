@@ -6,9 +6,9 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
-import id.indocyber.api_service.usecase.DetailUsecase
-import id.indocyber.api_service.usecase.ReviewUsecase
-import id.indocyber.api_service.usecase.VideoUsecase
+import id.indocyber.api_service.usecase.DetailUseCase
+import id.indocyber.api_service.usecase.ReviewUseCase
+import id.indocyber.api_service.usecase.VideoUseCase
 import id.indocyber.common.entity.detail_movie.MovieDetailResponse
 import id.indocyber.common.entity.review.Result
 import id.indocyber.common.entity.video.MovieVideoResponse
@@ -20,9 +20,9 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailVideoReviewViewModel @Inject constructor(
     application: Application,
-    val detailUsecase: DetailUsecase,
-    val videoUsecase: VideoUsecase,
-    val reviewUsecase: ReviewUsecase
+    val detailUsecase: DetailUseCase,
+    val videoUsecase: VideoUseCase,
+    val reviewUsecase: ReviewUseCase
 ) : BaseViewModel(application) {
     val getReviewData = MutableLiveData<PagingData<Result>>()
     val getDetail = MutableLiveData<AppResponse<MovieDetailResponse>>()

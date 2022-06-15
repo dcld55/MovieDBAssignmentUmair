@@ -4,7 +4,7 @@ import id.indocyber.api_service.paging.ReviewPager
 import id.indocyber.api_service.service.ReviewService
 import id.indocyber.common.Constant
 
-class ReviewUsecase(
+class ReviewUseCase(
     val reviewService: ReviewService
 ) {
     operator fun invoke(movieId: Int) =
