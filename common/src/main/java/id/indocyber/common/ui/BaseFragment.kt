@@ -35,11 +35,7 @@ abstract class BaseFragment<VM : BaseViewModel, Binding : ViewDataBinding> : Fra
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        parentFragment?.let {
-            if(it is BaseFragment<*, *>){
-                vm.parent = it.vm
-            }
-        }
+
         vm.navigationEvent.observe(this) {
             findNavController().navigate(it)
         }
